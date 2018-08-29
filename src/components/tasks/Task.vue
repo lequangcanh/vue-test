@@ -11,11 +11,11 @@ export default {
 
   methods: {
     handleTask: function (e) {
-      const taskStt = {
-        task: this.task,
+      const taskParams = {
+        task_id: this.task.id,
         value: e.target.checked
       }
-      this.$emit('handleTask', taskStt)
+      this.$store.dispatch('updateTask', taskParams)
     }
   }
 }
